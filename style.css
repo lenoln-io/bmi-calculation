@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    font-size: 62.5%;
+    --translateY: -100%;
+
+    --neutral: hsl(0, 0%, 100%);
+    --bg-color: hsl(231, 80%, 8%);
+    --title: hsl(194, 68%, 15%);
+    --label: hsl(170, 100%, 14%);
+    --bg-input: hsl(212, 23%, 89%);
+    --text-input: hsl(210, 11%, 15%);
+    --border-input: hsla(210, 9%, 31%, 0.3);
+    --input-focus-bg-button: hsl(194, 97%, 31%);
+    --placeholder: hsla(210, 9%, 31%, 0.5);
+
+    --bg-modal: hsla(0, 0%, 0%, 0.7);
+    --bg-error: hsl(0, 86%, 59%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+#error {
+    position: absolute;
+    top: -3.6rem;
+    background-color: var(--bg-error);
+    color: var(--neutral);
+    z-index: 10;
+
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.6rem;
+    line-height: 2rem;
+
+    padding-block: 0.8rem;
+    width: 100vw;
+
+    transition: transform 1s ease-in-out;
+    transform: translateY(var(--translateY));
+
+    &.active {
+        --translateY: 100%;
+    }
+    &.disable {
+        --translateY: -100%;
+    }
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+
+    background-color: var(--neutral);
+
+    padding: 4.8rem 6.4rem 6.4rem;
+    border-radius: 0.6rem;
+
+    position: relative;
+}
+
+h1 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 4rem;
+    color: var(--title);
+}
+
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+
+    &:first-child {
+        margin-bottom: 1.6rem;
+    }
+}
+
+label {
+    color: var(--label);
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+}
+
+input,
+button {
+    border-radius: 0.4rem;
+    width: 30rem;
+}
+
+input {
+    background-color: var(--bg-input);
+    color: var(--text-input);
+    font-size: 1.6rem;
+    line-height: 2rem;
+
+    border: 1px solid var(--border-input);
+
+    padding: 1.6rem;
+
+    &:focus {
+        border: 2px solid var(--input-focus-bg-button);
+        outline: none;
+    }
+
+    &::placeholder {
+        color: var(--placeholder);
+    }
+}
+
+button {
+    border: none;
+    padding: 1.6rem;
+    background-color: var(--input-focus-bg-button);
+    color: var(--neutral);
+
+    font-size: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    line-height: 2rem;
+
+    cursor: pointer;
+
+    & img {
+        margin-left: 0.8rem;
+    }
+}
+
+.overlay {
+    background-color: var(--bg-modal);
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+}
+
+#result-screen {
+    position: absolute;
+    z-index: 1;
+}
+
+.close-button {
+    position: absolute;
+    right: 2.1rem;
+    top: 2.1rem;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none !important;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}

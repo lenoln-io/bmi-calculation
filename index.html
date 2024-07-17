@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Cálculo IMC</title>
+        <link rel="stylesheet" href="./style.css" />
+        <script src="./src/main.js" type="module" defer></script>
+    </head>
+    <body>
+        <div id="error" class="disable">Digite somente números</div>
+        <div id="main-screen" class="card">
+            <div class="title">
+                <h1>Cálculo de IMC</h1>
+            </div>
+            <div class="inputs">
+                <div class="input-wrapper">
+                    <label for="weight">Peso (kg)</label>
+                    <input type="text" id="weight" name="weight" placeholder="60" autocomplete="off" />
+                </div>
+                <div class="input-wrapper">
+                    <label for="height">Altura (m)</label>
+                    <input type="text" id="height" name="height" placeholder="165" autocomplete="off" />
+                </div>
+            </div>
+            <button id="calculation-button">Calcular IMC <img src="./assets/arrow-right.svg" alt="" /></button>
+        </div>
+        <div id="overlay" class="hidden"></div>
+        <div id="result-screen" class="card hidden">
+            <h1 id="bmi-result">Seu IMC é de 28</h1>
+            <img class="close-button" src="./assets/close.svg" alt="Fechar modal" />
+        </div>
+    </body>
+    <script></script>
+</html>
