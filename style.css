@@ -2,7 +2,6 @@
 
 :root {
     font-size: 62.5%;
-    --translateY: -100%;
 
     --neutral: hsl(0, 0%, 100%);
     --bg-color: hsl(231, 80%, 8%);

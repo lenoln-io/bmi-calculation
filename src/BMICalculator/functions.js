@@ -12,11 +12,11 @@ export function reset() {
 }
 
 export function toggleErrorMessage(e) {
-    const allowedKeys = ['Backspace', 'Tab', 'Enter', 'Escape', 'Delete', 'Alt', 'Ctrl', 'Shift'];
+    const allowedKeys = ['Backspace', 'Tab', 'Enter', 'Escape', 'Delete', 'Alt', 'Control', 'Shift'];
     const isNotAllowedKey = !allowedKeys.includes(e.key);
 
     const isNotANumber = !/\d/.test(e.key);
-
+    
     if (isNotANumber && isNotAllowedKey) {
         e.preventDefault();
         activeError();
